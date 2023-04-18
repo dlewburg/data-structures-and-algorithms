@@ -24,6 +24,8 @@ These code challenges are typically done as the first challenge following the in
 
 #### Whiteboard Diagram & README
 
+[Code Challenge 01](./401-cc01/README.md)
+
 - Include a README that describes the data structure operation.
 - Include sections for each method describing inputs and outputs.
   - Include images where appropriate.
