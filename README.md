@@ -21,3 +21,13 @@ To run your tests
 ### 401 Data Structures, Code Challenges
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+
+#### Table of Contents
+
+***
+
+[Code Challenge 01](./java/401-cc01/README.md)
+
+[Code Challenge 02](./java/401-cc02/README.md)
+
+[Code Challenge 03](./java/401-cc03/README.md)
