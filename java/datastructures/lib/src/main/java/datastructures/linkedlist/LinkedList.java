@@ -1,22 +1,38 @@
 package datastructures.linkedlist;
 
+import com.google.common.annotations.VisibleForTesting;
+
 public class LinkedList
 {
   Node head = null;
   //
   public void insert(int value) {
-    // TODO: implement me
-    // add new node as the head of the LinkedList
+    Node newNode = new Node(value);
+    newNode.next = head;
+    head = newNode;
   }
 
   public boolean includes(int value) {
-    // TODO: implement me
-    // tell weather or not there is a node with the give values in the linked list
-    return true;
+    Node current = head;
+    while (current != null){
+      if (current.value == value) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
   }
+
   @Override
   public String toString()
     {
-        return "null";  // TODO: implement me
+      Node current = head;
+      String result = "";
+      while(current != null){
+        result += "{ " + current.value + " } ->";
+      }
+      result += "NULL";
+      return result;
     }
+
 }
