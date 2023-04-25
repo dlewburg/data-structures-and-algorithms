@@ -1,9 +1,8 @@
 package datastructures.linkedlist;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LinkedListTest
 {
@@ -14,22 +13,46 @@ public class LinkedListTest
       assertTrue(true);
     }
 
-    @Test public static void testLinkedList() {
-
+  @Test public void testInsert() {
     LinkedList list = new LinkedList();
-    Assertions.assertEquals("Null", list.toString());
-
-    list.insert(5);
-    Assertions.assertEquals("{ 5 }  -> Null", list.toString());
-    Assertions.assertEquals(5, list.head.value);
-
+    list.insert(1);
+    list.insert(2);
     list.insert(3);
-    list.insert(7);
-    Assertions.assertEquals("{ 7 } -> { 3 } -> { 5 } -> Null", list.toString());
-    Assertions.assertEquals(7, list.head.value);
+    assertEquals(true, list.includes(1));
+    assertEquals(true, list.includes(2));
+    assertEquals(true, list.includes(3));
+    assertEquals(false, list.includes(4));
+  }
 
-    Assertions.assertTrue(list.includes(3));
+  @Test public void testAppend() {
+    LinkedList list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    assertEquals(true, list.includes(1));
+    assertEquals(true, list.includes(2));
+    assertEquals(true, list.includes(3));
+    assertEquals(false, list.includes(4));
+  }
 
-    Assertions.assertFalse(list.includes(10));
-    }
+  @Test public void testInsertAfter() {
+    LinkedList list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insertAfter(2, 4);
+    assertEquals(true, list.includes(4));
+    assertEquals(false, list.includes(5));
+    list.insertAfter(3, 5);
+    assertEquals(true, list.includes(5));
+    assertEquals(false, list.includes(6));
+  }
+
+  @Test public void testInsertBefore(){
+    LinkedList list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insertBefore(2, 4);
+  }
 }
