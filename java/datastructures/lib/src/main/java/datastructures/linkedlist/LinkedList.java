@@ -4,12 +4,13 @@ import com.google.common.annotations.VisibleForTesting;
 
 public class LinkedList
 {
-  Node head = null;
+  public codechallenges.linkedlist.Node head;
+//  Node head = null;
 
   public void insert(int value) {
     Node newNode = new Node(value);
     newNode.next = head;
-    head = newNode;
+    head = (codechallenges.linkedlist.Node) newNode;
   }
 
   public boolean includes(int value) {
@@ -26,7 +27,7 @@ public class LinkedList
   public void append(int value){
     Node newNode = new Node(value);
     if (head == null){
-      head = newNode;
+      head = (codechallenges.linkedlist.Node) newNode;
       return;
     }
     Node current = head;
@@ -45,7 +46,7 @@ public class LinkedList
         Node newNode = new Node(newValue);
         newNode.next = current;
         if (previous == null) {
-          head = newNode;
+          head = (codechallenges.linkedlist.Node) newNode;
         } else {
           previous.next = newNode;
         }
