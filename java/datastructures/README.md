@@ -1,6 +1,6 @@
 # Data Structures
 
-## Linked List Insertions
+## Linked List K-th
 
 Take an existing Linked List program and insert values at the k-th value at then end of the list
 
