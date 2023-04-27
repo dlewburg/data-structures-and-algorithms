@@ -70,6 +70,27 @@ public class LinkedList
     }
   }
 
+  public int kthFromEnd(int k) {
+    int length = 0;
+    Node current = head;
+
+    while (current != null) {
+      length++;
+      current = current.next;
+    }
+
+    if (k > length) {
+      throw new RuntimeException("Linked list does not have k nodes");
+    }
+
+    current = head;
+    for (int i = 0; i < length - k; i++) {
+      current = current.next;
+    }
+
+    return current.value;
+  }
+
   @Override
   public String toString()
     {
