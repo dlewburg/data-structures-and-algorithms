@@ -2,7 +2,7 @@
 
 ## Linked List Insertions
 
-Take an existing Linked List program and insert values at the end, before, or after a particular node.
+Take an existing Linked List program and insert values at the k-th value at then end of the list
 
 ### Approach & Efficiency
 
