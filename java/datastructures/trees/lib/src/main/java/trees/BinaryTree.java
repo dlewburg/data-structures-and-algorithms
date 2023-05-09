@@ -52,7 +52,7 @@ public class BinaryTree {
     }
   }
 
-  public int[] inOrder() {
+  public int[] inOrder(List<Integer> traversal) {
     List<Integer> result = new ArrayList<>();
     inOrderHelper(root, result);
     return result.stream().mapToInt(i -> i).toArray();

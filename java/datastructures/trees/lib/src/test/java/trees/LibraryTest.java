@@ -78,12 +78,10 @@ class LibraryTest {
     bst.add(40);
     bst.add(60);
     bst.add(80);
+    List<Integer> traversal = new ArrayList<>();
+    bst.inOrder(traversal);
     int[] expected = {20, 30, 40, 50, 60, 70, 80};
-    List<Integer> actualList = bst.inOrder();
-    int[] actual = new int[actualList.size()];
-    for(int i = 0; i < actualList.size(); i++){
-      actual[i] = actualList.get(i);
-    }
+    assertArrayEquals(expected, traversal.stream().mapToInt(i -> i).toArray());
   }
 
   // Test post-order traversal
