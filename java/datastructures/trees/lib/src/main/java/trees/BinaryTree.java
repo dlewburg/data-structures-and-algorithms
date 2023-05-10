@@ -1,7 +1,9 @@
 package trees;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class BinaryTree {
   private Node root;
@@ -91,6 +93,26 @@ public class BinaryTree {
     return current.getValue();
   }
 
+  public List<Integer> breadthFirst() {
+    List<Integer> result = new ArrayList<>();
+
+    if (root == null) {
+      return result;
+    }
+    Queue<Node> queue = new LinkedList<>();
+    queue.offer(root);
+    while (!queue.isEmpty()) {
+      Node current = queue.poll();
+      result.add(current.getValue());
+      if (current.getLeft() != null) {
+        queue.offer(current.getLeft());
+      }
+      if (current.getRight() != null) {
+        queue.offer(current.getRight());
+      }
+    }
+    return result;
+  }
   public Node getRoot() {
     return root;
   }

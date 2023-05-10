@@ -6,6 +6,7 @@ package trees;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -131,6 +132,28 @@ class LibraryTest {
     root.getRight().setRight(new Node(80));
     tree.setRoot(root);
     assertEquals(80, tree.findMaximumValue());
+  }
+
+  @Test
+  public void testBreadthFirst() {
+    BinaryTree tree = new BinaryTree();
+    Node root = new Node(1);
+    Node n2 = new Node(2);
+    Node n3 = new Node(3);
+    Node n4 = new Node(4);
+    Node n5 = new Node(5);
+    Node n6 = new Node(6);
+    Node n7 = new Node(7);
+    root.setLeft(n2);
+    root.setRight(n3);
+    n2.setLeft(n4);
+    n2.setRight(n5);
+    n3.setLeft(n6);
+    n3.setRight(n7);
+    tree.setRoot(root);
+    List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+    List<Integer> actual = tree.breadthFirst();
+    assertEquals(expected, actual);
   }
 
 }
