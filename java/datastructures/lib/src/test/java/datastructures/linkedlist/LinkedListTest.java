@@ -55,4 +55,58 @@ public class LinkedListTest
     list.insert(3);
     list.insertBefore(2, 4);
   }
+
+  @Test public void testKGreaterThanLength() {
+      LinkedList list = new LinkedList();
+      list.insert(1);
+      list.insert(2);
+      list.insert(3);
+
+      int k = 4;
+      while (list.head != null && k > 0) {
+        list.insert(0);
+        k--;
+      }
+
+      list.kthFromEnd(4);
+    }
+
+  @Test public void testKthFromEndWithKEqualToListLength() {
+    LinkedList list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.kthFromEnd(3); // k is equal to the length of the list
+  }
+
+  @Test public void testKthFromEndWithKNotPositive() {
+    LinkedList list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    try {
+      list.kthFromEnd(-1); // k is negative
+    } catch (RuntimeException e) {
+      assertEquals("Cannot read field \"next\" because \"current\" is null", e.getMessage());
+    }
+  }
+
+  @Test public void testKthFromEndWithListOfSize1() {
+    LinkedList list = new LinkedList();
+    list.insert(1);
+    assertEquals(1, list.kthFromEnd(1));
+  }
+
+  @Test public void testKthFromEndHappyPath() {
+    LinkedList list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+
+    assertEquals(3, list.kthFromEnd(3)); // k is in the middle of the list
+  }
+
+
 }
