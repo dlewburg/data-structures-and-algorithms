@@ -116,4 +116,19 @@ class LibraryTest {
     assertFalse(bst.contains(90));
   }
 
+  @Test
+  public void testFindMaximumValue() {
+    BinaryTree tree = new BinaryTree();
+    Node root = new Node(50);
+    root.setLeft(new Node(30));
+    root.setRight(new Node(70));
+    root.getLeft().setLeft(new Node(20));
+    root.getLeft().setRight(new Node(40));
+    root.getRight().setLeft(new Node(60));
+    root.getRight().setRight(new Node(80));
+    tree.setRoot(root);
+    assertEquals(80, tree.findMaximumValue());
+  }
+
+
 }

@@ -80,6 +80,17 @@ public class BinaryTree {
     }
   }
 
+  public Integer findMaximumValue() {
+    if (root == null) {
+      return null;
+    }
+    Node current = root;
+    while (current.getRight() != null) {
+      current = current.getRight();
+    }
+    return current.getValue();
+  }
+
   public Node getRoot() {
     return root;
   }
